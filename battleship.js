@@ -35,7 +35,7 @@ for (i = 0; i < cols; i++) {
 
 		// THIS IS WHERE YOU WILL ADD CODE FOR PART 1 TO ADD TEXT TO EACH SQUARE
 
-		square.textContent = letterArray[j] + i + 1;
+		square.textContent = letterArray[j] + (i + 1);
 
 		// set each grid square's coordinates: multiples of the current row or column number
 		var topPosition = j * squareSize;
@@ -64,5 +64,15 @@ var gameBoard = [
 function fireTorpedo() {
 
 	// Your game logic will go here!
+	var userInput = $("textInput").val();
+	var rowletter = userInput.substring(0,1);
+	var column = userInput.substring(1,2);
+	var row = letterConversion[rowletter];
+	var torpedoGuess = gameboard[row][column];
+	if(torpedoGuess = 0) {
+
+		gameboard[row][column].css("background-color", "Grey")
+
+	}
 
 }
