@@ -69,9 +69,15 @@ function fireTorpedo() {
 	var column = userInput.substring(1,2);
 	var row = letterConversion[rowletter];
 	var torpedoGuess = gameboard[row][column];
-	if(torpedoGuess = 0) {
+	var myDivString = "#s" + row + column;
+	if(torpedoGuess = 1) {
 
-		gameboard[row][column].css("background-color", "Grey")
+		$(myDivString).css("background-color", "red");
+
+	}
+	else {
+
+		$(myDivString).css("background-color", "grey");
 
 	}
 
