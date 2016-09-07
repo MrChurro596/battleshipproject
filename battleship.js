@@ -64,19 +64,19 @@ var gameBoard = [
 function fireTorpedo() {
 
 	// Your game logic will go here!
-	var userInput = $("textInput").val();
+	var userInput = $("#textInput").val();
 	var rowletter = userInput.substring(0,1);
-	var column = userInput.substring(1,2);
+	var column = userInput.substring(1,3);
 	var row = letterConversion[rowletter];
-	var torpedoGuess = gameboard[row][column];
+	var torpedoGuess = gameBoard[row][column];
 	var myDivString = "#s" + row + column;
-	if(torpedoGuess = 1) {
-
+	if(torpedoGuess == 1) {
+			console.log(row , column);
 		$(myDivString).css("background-color", "red");
 
 	}
 	else {
-
+			console.log(row , column);
 		$(myDivString).css("background-color", "grey");
 
 	}
