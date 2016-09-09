@@ -60,19 +60,22 @@ var gameBoard = [
 				[1,0,0,1,0,0,0,0,0,0],
 				[1,0,0,0,0,0,0,0,0,0]
 				]
-
+	var hitCount = 0;
 function fireTorpedo() {
 
 	// Your game logic will go here!
+
 	var userInput = $("#textInput").val();
 	var rowletter = userInput.substring(0,1);
-	var column = userInput.substring(1,3);
+	var column = userInput.substring(1,3) - 1;
 	var row = letterConversion[rowletter];
 	var torpedoGuess = gameBoard[row][column];
 	var myDivString = "#s" + row + column;
 	if(torpedoGuess == 1) {
 			console.log(row , column);
 		$(myDivString).css("background-color", "red");
+		hitCount++;
+		console.log(hitCount);
 
 	}
 	else {
@@ -80,5 +83,9 @@ function fireTorpedo() {
 		$(myDivString).css("background-color", "grey");
 
 	}
+
+	if(hitCount == 17)
+
+ $("#instructions").text("Congradumalations You Have Sunk Me Ships");
 
 }
